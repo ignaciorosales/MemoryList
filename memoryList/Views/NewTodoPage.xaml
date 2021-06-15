@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="memoryList.Views.NewItemPage"
-             Title="NUEVO PRODUCTO"
+             x:Class="memoryList.Views.NewTodoPage"
+             Title="NUEVO TO DO"
              BackgroundColor="{DynamicResource PageColor}">
     
     <ContentPage.ToolbarItems>
@@ -12,8 +12,8 @@
     
     <ContentPage.Content>
         <StackLayout Spacing="20" Padding="15,40,15,15">
-            <Label Text="Agrega el producto a la lista" TextColor="{DynamicResource TextColor}" FontSize="Medium" />
-            <Entry Text="{Binding Item.Text}" Placeholder=" Producto" PlaceholderColor="{DynamicResource TextColor}" FontSize="Small" TextColor="{DynamicResource TextColor}"/>
+            <Label Text="Agrega el to do a la lista" TextColor="{DynamicResource TextColor}" FontSize="Medium" />
+            <Entry Text="{Binding Todo.Text}" Placeholder=" To do" PlaceholderColor="{DynamicResource TextColor}" FontSize="Small" TextColor="{DynamicResource TextColor}"/>
         </StackLayout>
     </ContentPage.Content>
     

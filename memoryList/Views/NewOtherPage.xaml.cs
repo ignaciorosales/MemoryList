@@ -1,22 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
 using memoryList.Models;
+using Xamarin.Forms;
 
 namespace memoryList.Views
 {
-    public partial class NewItemPage : ContentPage
+    public partial class NewOtherPage : ContentPage
     {
-        public Item Item { get; set; }
+        public Other Other { get; set; }
 
-        public NewItemPage()
+        public NewOtherPage()
         {
             InitializeComponent();
 
-            Item = new Item
+            Other = new Other
             {
                 Text = ""
             };
@@ -26,7 +23,7 @@ namespace memoryList.Views
 
         async void Save_Clicked(object sender, EventArgs e)
         {
-            MessagingCenter.Send(this, "AddItem", Item);
+            MessagingCenter.Send(this, "AddOther", Other);
             await Navigation.PopModalAsync();
         }
 

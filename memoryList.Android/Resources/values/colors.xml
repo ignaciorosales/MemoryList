@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="launcher_background">#FFFFFF</color>
-    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimary">#ECD4CF</color>
     <color name="colorPrimaryDark">#ECD4CF</color>
     <color name="colorAccent">#484545</color>
     <color name="color_action_bar">#ECD4CF</color>
+    <color name="ListViewSelected">#EAD0CB</color>
+    <color name="ListViewHighlighted">#EAD0CB</color>
 </resources>

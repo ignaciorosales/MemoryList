@@ -1,19 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="memoryList.Views.ItemsPage"
+             x:Class="memoryList.Views.TodosPage"
              Title="{Binding Title}"
-             x:Name="BrowseItemsPage"
+             x:Name="BrowseTodosPage"
              BackgroundColor="{DynamicResource PageColor}">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="AGREGAR" Clicked="AddItem_Clicked"/>
     </ContentPage.ToolbarItems>
 
-    <RefreshView IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Command="{Binding LoadItemsCommand}">
+    <RefreshView IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Command="{Binding LoadTodosCommand}">
         <ListView
-            x:Name="ItemsCollectionView"
-            ItemsSource="{Binding Items}"
+            x:Name="TodosCollectionView"
+            ItemsSource="{Binding Todos}"
             SeparatorColor="{DynamicResource SeparatorColor}"
         >
             <ListView.ItemTemplate>
@@ -21,7 +21,7 @@
                     <ViewCell>
                         <ViewCell.ContextActions>
                             <MenuItem
-                               Command="{Binding Source={x:Reference BrowseItemsPage}, Path=BindingContext.DeleteItemCommand}"
+                               Command="{Binding Source={x:Reference BrowseTodosPage}, Path=BindingContext.DeleteTodoCommand}"
                                CommandParameter="{Binding .}"
                                Text="DELETE"
                                IsDestructive="True"

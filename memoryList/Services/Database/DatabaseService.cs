@@ -25,6 +25,8 @@ namespace memoryList
         private async Task InitializeAsync()
         {
             await _db.CreateTableAsync<Item>();
+            await _db.CreateTableAsync<Todo>();
+            await _db.CreateTableAsync<Other>();
         }
 
         public async Task<List<T>> GetAllWithChildrenAsync<T>(bool recursive = true) where T : new()
