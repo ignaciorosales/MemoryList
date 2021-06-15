@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="memoryList.Views.ItemsPage"
+             Title="{Binding Title}"
+             x:Name="BrowseItemsPage"
+             BackgroundColor="{DynamicResource PageColor}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="ADD" Clicked="AddItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <RefreshView IsRefreshing="{Binding IsBusy, Mode=TwoWay}" Command="{Binding LoadItemsCommand}">
+        <ListView
+            x:Name="ItemsCollectionView"
+            ItemsSource="{Binding Items}"
+            SeparatorColor="{DynamicResource SeparatorColor}"
+        >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem
+                               Command="{Binding Source={x:Reference BrowseItemsPage}, Path=BindingContext.DeleteItemCommand}"
+                               CommandParameter="{Binding .}"
+                               Text="Delete"
+                               IsDestructive="True"
+                            />
+                        </ViewCell.ContextActions>
+                        <StackLayout Padding="10">
+                            <Label
+                                Padding="10"
+                                Text="{Binding Text}"
+                                TextColor="{DynamicResource TextColor}"
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="16"
+                            />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </RefreshView> 
+</ContentPage>
